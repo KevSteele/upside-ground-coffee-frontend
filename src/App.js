@@ -1,7 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import React from "react";
+import { BrowserRouter, Route, Switch, Link} from "react-router-dom";
+
+
+import React, {useState, useEffect} from 'react';
+
+
+import './App.css';
+import login from './login.js';
+import home from './home.js';
+import signup from './signup.js';
+import onepoundbag from './onepoundbag.js';
 function App() {
 
   var [isEditing, setIsEdit] = useState("");
@@ -88,6 +97,17 @@ const handleSubmit = async (e) => {
 // const newCity = Object.assign({}, address.city)
 
   return (
+    <div>
+
+         <BrowserRouter>
+       <Switch>
+      <Route exact path="/login" component={login} />
+      <Route exact path="/" component={ home } />
+      <Route exact path="/signup" component={ signup } />
+      <Route exact path="/onepoundbag" component={ onepoundbag } />
+      </Switch>
+      </BrowserRouter>   
+
     <div className="App">
         <form onSubmit={handleSubmit}>
           <label>Product</label>
@@ -115,8 +135,14 @@ const handleSubmit = async (e) => {
           </div>
         )
       })}
+
     </div>
   );
 }
+
+
+
+
+
 
 export default App;
