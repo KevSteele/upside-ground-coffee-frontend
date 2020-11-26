@@ -2,15 +2,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Link} from "react-router-dom";
 
-
 import React, {useState, useEffect} from 'react';
-
 
 import './App.css';
 import login from './login.js';
 import home from './home.js';
 import signup from './signup.js';
 import onepoundbag from './onepoundbag.js';
+
+
 function App() {
 
   var [isEditing, setIsEdit] = useState("");
@@ -35,8 +35,6 @@ function App() {
 //   "__v":{"$numberInt":"0"}
 // }
 
-  var [customer, setCustomer] = useState({});
-  var [address, setAddress] = useState({});
 
   var [street, setStreet] = useState("");
   var [city, setCity] = useState("");
@@ -82,9 +80,8 @@ const handleSubmit = async (e) => {
   })
 
   //why is this undefined if using address? Lines 76-80 are in place for testing the user inputs
-  console.log(address);
-  console.log(address.street);
-  console.log(address.city);
+  console.log(street);
+  console.log(city);
   console.log(state);
   console.log(zip);
 
@@ -97,18 +94,18 @@ const handleSubmit = async (e) => {
 // const newCity = Object.assign({}, address.city)
 
   return (
-    <div>
-
-         <BrowserRouter>
-       <Switch>
-      <Route exact path="/login" component={login} />
-      <Route exact path="/" component={ home } />
-      <Route exact path="/signup" component={ signup } />
-      <Route exact path="/onepoundbag" component={ onepoundbag } />
-      </Switch>
-      </BrowserRouter>   
 
     <div className="App">
+
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/login" component={login} />
+          <Route exact path="/" component={ home } />
+          <Route exact path="/signup" component={ signup } />
+          <Route exact path="/onepoundbag" component={ onepoundbag } />
+        </Switch>
+      </BrowserRouter>   
+
         <form onSubmit={handleSubmit}>
           <label>Product</label>
           <input type="text" onChange = { e => setProduct(e.target.value)} /> 
@@ -128,6 +125,7 @@ const handleSubmit = async (e) => {
 
           <input type="submit" />
         </form>
+      
       {orders.map((order, idx) => {
         return(
           <div key={idx}>
@@ -135,14 +133,8 @@ const handleSubmit = async (e) => {
           </div>
         )
       })}
-
     </div>
   );
 }
-
-
-
-
-
 
 export default App;

@@ -7,7 +7,7 @@
 
 
 .logo{
- max-height: 20vmin;
+  max-height: 20vmin;
   pointer-events: none;
   float: inline-start;
   display: flex;
