@@ -1,10 +1,8 @@
 .home{
   text-align: center;
-
   max-width: 340px;
   margin: 10vh auto;
 }
-
 
 .logo{
   max-height: 20vmin;
@@ -12,7 +10,6 @@
   float: inline-start;
   display: flex;
   position: 20%;
-
 }
 
 .home-header {
@@ -23,7 +20,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-
 }
 
 .login {
@@ -32,8 +28,8 @@
   height: 80px;
   width: 80px;
   position: relative;
-   top: -400px;
-   left: 600px;
+  top: -400px;
+  left: 600px;
 }
 
 .signup{
@@ -42,19 +38,18 @@
   height: 80px;
   width: 100px;
   position: relative;
-   top: -480px;
-   left: 500px;
+  top: -480px;
+  left: 500px;
 }
-
 
 .bag1 {
   color: gray;
   font-family: initial;
   height: 20vmin;
   width: 100px;
-  position: relative;
-   top: -200px;
-   left: -800px;
+  /* position: relative; */
+  top: -200px;
+  left: -800px;
 }
 
 
