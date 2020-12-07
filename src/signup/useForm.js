@@ -49,10 +49,38 @@ export default function useForm({ initialValues }) {
                 headers: new Headers({ 'Content-Type': 'application/json' })
             }).then(res => {
                 history.push('/');
+                alert('Success!')
             })
         } catch (err) {
             // setError(err.response.data);
             console.log(err.response.data);
+            alert(err.response.data)
+            // document.write(err.response.data);
+        }
+    };
+
+    //login
+    const sessionLogin = async (formValues) => {
+        const url = 'http://localhost:3000/';
+        const dataObject = formValues.values;
+        const {email, password} = dataObject;
+        try {
+            await axios({
+                method: 'POST',
+                url: `${url}user/login`,
+                data: {
+                    email: email,
+                    password: password,
+                },
+                headers: new Headers({ 'Content-Type': 'application/json' })
+            }).then(res => {
+                history.push('/orders'); //profile route goes here
+                alert('Success!')
+            })
+        } catch (err) {
+            // setError(err.response.data);
+            console.log(err.response.data);
+            alert(err.response.data)
             // document.write(err.response.data);
         }
     };
@@ -62,6 +90,7 @@ export default function useForm({ initialValues }) {
         handleKeyDown,
         values,
         handleSubmit,
-        error
+        error,
+        sessionLogin
     }
 }
