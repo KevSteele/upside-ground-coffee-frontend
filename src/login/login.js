@@ -20,32 +20,6 @@ function Login() {
         }
     });
 
-    // const handleLogin = async (e) =>{
-    //     e.preventDefault();
-    //     try{
-            
-    //         let data = await fetch("http://localhost:3000/user/login", {
-    //             method: "POST",
-    //             credentials: 'include',
-    //             headers: {
-    //                 'Content-Type': 'application/json'
-    //             },
-    //             body: JSON.stringify({email, password})
-    //         })
-
-
-    //         let user = await data.json();
-
-    //         if(!user.hasOwnProperty('message')){
-    //             userHasAuthenticated(user);
-    //             setMessage("Welcome back!");
-    //         } else {
-
-    //         }
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
 
 
 

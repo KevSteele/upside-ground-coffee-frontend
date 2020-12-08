@@ -9,6 +9,7 @@ import Orders from '../orders/orders';
 import { AppContext } from '../libraries/appContext';
 import AuthenticatedRoute from "../libraries/authRoute";
 import Message from "../components/Message";
+import ShoppingCart from '../shopping cart/shopping cart/shopping';
 
 
 function App() {
@@ -25,11 +26,12 @@ function App() {
       method: "POST",
       credentials: 'include',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
     })
 
     let user = await data.json();
+    console.log(user);
 
     if (user.token) {
       userHasAuthenticated(user.token)
@@ -47,6 +49,7 @@ function App() {
             <Route exact path="/" component={home} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/onepoundbag" component={onepoundbag} />
+            <Route exact path="/shopping-cart" component={ShoppingCart} />
             <AuthenticatedRoute path="/orders" component={Orders} />
           </Switch>
         </BrowserRouter>

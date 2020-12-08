@@ -61,7 +61,7 @@ export default function useForm({ initialValues }) {
 
     //login
     const sessionLogin = async (formValues) => {
-        const url = 'http://localhost:3000/';
+        const url = 'https://localhost:3000/';
         const dataObject = formValues.values;
         const {email, password} = dataObject;
         try {
@@ -74,7 +74,7 @@ export default function useForm({ initialValues }) {
                 },
                 headers: new Headers({ 'Content-Type': 'application/json' })
             }).then(res => {
-                history.push('/orders'); //profile route goes here
+                history.push('/'); //profile route goes here
                 alert('Success!')
             })
         } catch (err) {
